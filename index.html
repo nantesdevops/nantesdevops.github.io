@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Automatisation, déploiement, culture d'entreprise, processus lean, mesure et nouvelles technos, à la Nantaise!">
+      <meta name="author" content="Arno BAUDU">
+      <link rel="icon" href="/favicon.ico">
+
+      <title>Nantes DevOps</title>
+
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/jquery.fullPage.css" rel="stylesheet">
+
+      <!-- Custom styles -->
+      <link href="/css/custom.css" rel="stylesheet">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <script type="application/json" id="events">
+         [
+            {
+               "evdate"    : "2014/12/12",
+               "evtime"    : "20:00",
+               "evauthor"  : "Arno Baudu - KataLean",
+               "evplace"   : "La Cantine 2.0",
+               "evaddress" : "11 impasse Juton 44000 Nantes",
+               "evtitle"   : "Utiliser Docker dans un ecosystème DevOps",
+               "evdesc"    : "A moins d'avoir vécu sous un rocher cette année, il serait étonnant que vous n'ayez pas entendu parler de Docker. Docker se décrit comme une plateforme ouverte, permettant le déploiement d'applications et utilisable autant par les développeurs que par les administrateurs. Ca donne envie, seulement pourquoi est-ce si important?"
+            }
+         ]
+      </script>
+   </head>
+
+   <body>
+
+      <ul id="menu" class="nav">
+         <li data-menuanchor="event" class="active">
+            <a href="#event" class="uppercase">Evenement</a>
+         </li>
+         <li data-menuanchor="map">
+            <a href="#map" class="uppercase">Lieu</a>
+         </li>
+         <li data-menuanchor="about">
+            <a href="#about" class="uppercase">Partenaires</a>
+         </li>
+         <li data-menuanchor="contact">
+            <a href="#contact" class="uppercase">Contact</a>
+         </li>
+      </ul>
+
+      <div id="fullpage">
+<!-- Event -->
+         <div class="section" id="section0">
+
+            <div class="overlay-block">
+               <div class="overlay-inner">
+
+                  <div class="ribbon">
+                    <span>Prochaine rencontre</span>
+                  </div>
+
+                  <!-- Layer 2 -->
+                  <div class="bg-indigo-70">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-7">
+                              <!-- <span id="evauthor" class="author"></span> -->
+                              <h1 class="shadow-indigo">Nantes DevOps</h1>
+                              <h2 id="evtitle"class="light-weight shadow-indigo">Faites passer Agile en production</h2>
+                           </div>
+                           <div class="col-md-5">
+                              <p id="evdesc" class="summary" align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud tempor incididunt ut labore et dolore magna aliqua.</p>
+                           </div>
+                        </div>
+                     </div>
+                   <!--Slide Up Toggle-->
+                     <div id="slide-up-toggle"><i class="fa fa-angle-double-down"></i></div>
+                  </div>
+
+                  <!-- Layer 3 -->
+                  <div class="bg-indigo-96 slide-up"><!--Adding Class 'slide-up' hiding content in mobile view and reveal (slide up) content on click-->
+                     <div class="container">
+                        <div class="row event-footer">
+                           <div class="col-md-7">
+                              <!--Countdown-->
+                              <div class="countdown">
+                                 <div class="timer" id="timer"></div>
+                                 <div class="timergroup">
+                                    <span>Days</span>
+                                    <span>Hours</span>
+                                    <span>Minutes</span>
+                                    <span>Seconds</span>
+                                 </div>
+                                 <p class="datetime"></p>
+                              </div>
+                           </div>
+                           <div class="col-md-5">
+                              <form action="//forms.brace.io/devops@katalean.com" method="POST" id="participate" class="material" name="participate">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <div class="group">
+                                          <input type="text" name="participent_name" id="participent_name">
+                                          <span class="highlight"></span><span class="bar"></span>
+                                          <label for="participent_name">Nom</label>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="group material-select">
+                                          <select name="participent_field" id="participent_field">
+                                             <option></option>
+                                             <option>Business</option>
+                                             <option>Conduite de projet</option>
+                                             <option>Développement</option>
+                                             <option>Infrastructure</option>
+                                             <option>Qualité</option>
+                                             <option>Management</option>
+                                          </select>
+                                          <label for="participent_field">Compétence</label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <div class="group">
+                                          <input type="email" name="participent_email" id="participent_email">
+                                          <span class="highlight"></span><span class="bar"></span>
+                                          <label for="participent_email">Email</label>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <button type="submit" class="button buttonBlue" value="send">Participer
+                                          <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+                                       </button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+<!-- Map -->
+         <div class="section" id="section1">
+            <h1 class="big">Lieu avec Map</h1>
+         </div>
+
+<!-- About -->
+         <div class="section" id="section2">
+            <h1 class="big">About Us</h1>
+         </div>
+
+<!-- Contact -->
+         <div class="section" id="section3">
+            <h1 class="big">Contact Form</h1>
+         </div>
+      </div>
+
+
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="/js/jquery.min.js?v=1.11.1"></script>
+      <script src="/js/bootstrap.min.js?v=3.2.2"></script>
+      <script src="/js/jquery.fullPage.min.js?v=2.5.0"></script>
+      <script src="/js/jquery.countdown.min.js?v=2.0.4"></script>
+
+      <script type="text/javascript">
+        /*
+         * FullPage slider
+         */
+
+         $(document).ready(function() {
+            $('#fullpage').fullpage({
+               anchors: ['event', 'map', 'about', 'contact'],
+               menu: '#menu',
+               css3: true,
+               scrollingSpeed: 700,
+               continuousVertical: true,
+               verticalCentered: false,
+               navigation: true,
+               navigationPosition: 'right',
+               navigationTooltips: ['Evenement', 'Lieu', 'Partenaires', 'Contact'],
+               responsive: 700
+            });
+         });
+
+
+        /* 
+         * Event information
+         */
+         // Clone to be able to reset to default (replaceWith) after event finishes
+         var evtitleClone = $("#evtitle").clone();
+         var evdescClone = $("#evdesc").clone();
+
+         // Get latest event
+         var nextEvent = $.parseJSON($('#events').html()).pop();
+
+         // Replace default title and description with the event's infos
+         $("#evtitle").text(nextEvent.evtitle)
+         $("#evdesc").text(nextEvent.evdesc)
+         // $("#evauthor").text(nextEvent.evauthor)
+
+         // Add the proper date
+         $(".datetime").text('soit le ' + nextEvent.evdate + ' à ' + nextEvent.evtime);
+
+
+        /*
+         * Countdown
+         */
+
+         $("#timer")
+         .countdown(nextEvent.evdate + ' ' + nextEvent.evtime, function(event) {
+            $(this).text(event.strftime('%D : %H : %M : %S'));
+         })
+         .on('finish.countdown', function(event) {
+            // Next event message
+            $(this).parent().addClass('disabled');
+            $(this).parent().html('<h3 class="zoomIn animated">Rendez-vous très bientôt pour le prochain evenement!</h3><p class="zoomIn animated delay-1s"><strong>Dernière rencontre</strong><br/>' + nextEvent.evdate + ' à ' + nextEvent.evtime + '<br/>' + nextEvent.evtitle + '<br/>' + nextEvent.evauthor + '</p>');
+
+            // Change event title and description
+            $("#evtitle").replaceWith(evtitleClone);
+            $("#evdesc").replaceWith(evdescClone);
+
+            // Remove the Next event ribbon
+            $(".ribbon").remove();
+         });
+
+        /*
+         * Material forms
+         */
+         $(window, document, undefined).ready(function() {
+            $('input, select').blur(function() {
+               var $this = $(this);
+               if ($this.val())
+                  $this.addClass('used');
+               else
+                  $this.removeClass('used');
+            });
+
+            var $ripples = $('.ripples');
+
+            $ripples.on('click.Ripples', function(e) {
+
+               var $this = $(this);
+               var $offset = $this.parent().offset();
+               var $circle = $this.find('.ripplesCircle');
+
+               var x = e.pageX - $offset.left;
+               var y = e.pageY - $offset.top;
+
+               $circle.css({
+                  top: y + 'px',
+                  left: x + 'px'
+               });
+
+               $this.addClass('is-active');
+            });
+
+            $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+               $(this).removeClass('is-active');
+            });
+         });
+      </script>
+   </body>
+</html>
