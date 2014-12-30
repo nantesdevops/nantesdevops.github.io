@@ -31,7 +31,51 @@ p {
    font-size: 16px;
 }
 
-/* Helpers */
+
+/*
+ * FillPage Sections
+ */
+
+.section {
+   text-align: center;
+}
+#section0,
+#section1,
+#section2,
+#section3,
+#section4 {
+   background-size: cover;
+}
+/* Event */
+#section0 {
+   background-image: url(/img/event.jpg);
+}
+/* Map */
+#section1 {
+   background-color: #333;
+   padding: 50% 0 0 0;
+}
+/* Partners */
+#section2 {
+   background-color: #727272;
+   padding: 23% 0 0 0;
+}
+/* About */
+#section3 {
+   background-color: #607D8B;
+   padding: 18% 0 0 0;
+}
+/* Contact */
+#section4 {
+   background-color: #102b3e;
+   padding: 20% 0 0 0;
+}
+
+
+/*
+ * Helpers
+ */
+
 .no-margin {
    margin: 0;
 }
@@ -50,6 +94,17 @@ p {
 .disabled {
    color: #ccc;
    text-align: center;
+}
+.vbottom {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.margin-bottom-15 {
+   margin-bottom: 15px;
+}
+.margin-bottom-25 {
+   margin-bottom: 25px;
 }
 
 
@@ -173,63 +228,33 @@ p {
 
 
 /*
- * FillPage Sections
- */
-
-.section {
-   text-align: center;
-}
-#section0,
-#section1,
-#section2,
-#section3 {
-   background-size: cover;
-}
-#section0 {
-   background-image: url(/img/event.jpg);
-}
-#section1 {
-   background-color: #333;
-   padding: 27% 0 0 0;
-}
-#section2 {
-   background-color: #999;
-   padding: 27% 0 0 0;
-}
-#section3 {
-   background-color: #ddd;
-   padding: 27% 0 0 0;
-}
-
-
-/*
  * Menu
  */
 
-#menu li {
+#menu li, #menu li:hover, #menu li:focus {
    display: inline-block;
    margin: 10px;
    color: #000;
-   background: #fff;
    background: rgba(255,255,255, 0.5);
    -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
    border-radius: 10px;
 }
-#menu li.active {
+#menu li.active, #menu li.active:hover, #menu li.active:focus {
    background: #666;
-   background: rgba(0,0,0, 0.5);
+   background: rgba(0,0,0, 0.7);
    color: #fff;
 }
 #menu li a {
    text-decoration: none;
    color: #000;
 }
-#menu li.active a:hover {
+/*#menu li.active a:hover {
    color: #000;
 }
 #menu li:hover {
    background: rgba(255,255,255, 0.8);
-}
+}*/
 #menu li a,
 #menu li.active a {
    padding: 9px 18px;
@@ -247,7 +272,7 @@ p {
    width: 100%;
    padding: 0;
    margin: 0;
-   font-size: 10px;
+   font-size: 11px;
 }
 
 
@@ -273,12 +298,11 @@ p {
    bottom: 15px;
 }
 .overlay-block h1 {
-   margin-top: 38px;
+   margin-top: 15px;
    margin-left: 45px;
+   margin-bottom: 0px;
    font-weight: 400;
    font-size: 46px;
-   position: relative;
-   bottom: 0px;
 }
 .overlay-block h2 {
    margin-top: 0px;
@@ -385,7 +409,7 @@ form {
    margin-bottom: 30px; 
 }
 
-input {
+input, textarea {
    font-size: 18px;
    padding: 10px 10px 10px 5px;
    -webkit-appearance: none;
@@ -402,7 +426,7 @@ input {
    font-weight: 300;
 }
 
-input:focus {
+input:focus, textarea:focus {
    outline: none;
    border: none;
 }
@@ -426,7 +450,8 @@ input:focus, input.used {
    /*border: 1px solid #aaa;*/
 }
 
-input:focus ~ label, input.used ~ label {
+input:focus ~ label, input.used ~ label,
+textarea:focus ~ label, textarea.used ~ label {
    top: -20px;
    transform: scale(.75);
    left: -2px;
@@ -509,7 +534,9 @@ select:focus ~ label, select.used ~ label {
 /* Active */
 
 input:focus ~ .bar:before,
-input:focus ~ .bar:after {
+input:focus ~ .bar:after,
+textarea:focus ~ .bar:before,
+textarea:focus ~ .bar:after {
    width: 50%;
 }
 
@@ -527,7 +554,8 @@ input:focus ~ .bar:after {
 
 /* Active */
 
-input:focus ~ .highlight {
+input:focus ~ .highlight,
+textarea:focus ~ .highlight {
    animation: inputHighlighter 0.3s ease;
 }
 
@@ -627,4 +655,76 @@ input:focus ~ .highlight {
       opacity: 0;
    }
 }
+
+
+
+/*
+ * Lieu
+ */
+
+#googlemaps { 
+   height: 100%; 
+   width: 100%; 
+   position: absolute; 
+   top: 0; 
+   left: 0; 
+   z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
+}
+ 
+#address { 
+   z-index: 1; /* The z-index should be higher than Google Maps */
+   overflow: hidden;
+   text-align: center;
+}
+.address-box {
+   background: rgba(0, 0, 0, 0.50);
+}
+.address-box p {
+   color: #fff;
+   font-size: 2em;
+   margin-bottom: 0;
+}
+.address-box p.evaddress, .address-box p.evcity {
+   font-size: 1em;
+}
+
+
+/*
+ * Partners
+ */
+#partners-inner h1 {
+   color: #666;
+   margin-bottom: 50px;
+}
+
+#partners-inner li {
+   padding: 20px;
+   margin-top: 30px;
+   list-style: none;
+   display: inline;
+}
+
+
+/*
+ * About
+ */
+#about-inner p {
+   font-size: 1.5em;
+   margin-bottom: 30px;
+   font-weight: 300;
+}
+
+
+/*
+ * Contact
+ */
+#contact-inner input,
+#contact-inner textarea {
+   font-size: 2.2em;
+}
+#contact-inner label,
+#contact-inner button {
+   font-size: 1.5em;
+}
+
 
